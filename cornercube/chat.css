@@ -1,0 +1,238 @@
+#cc-chat-root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#cc-chat-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: rgba(244, 155, 23, 0.95);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+#cc-chat-toggle:hover,
+#cc-chat-toggle:focus-visible {
+  background: rgb(232, 138, 12);
+  outline: none;
+}
+
+#cc-chat-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 84px;
+  z-index: 41;
+  display: none;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 32px));
+  height: min(560px, calc(100vh - 120px));
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#cc-chat-panel.open {
+  display: flex;
+}
+
+#cc-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: rgba(244, 155, 23, 0.95);
+  color: #fff;
+}
+
+#cc-chat-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+#cc-chat-header p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+#cc-chat-header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+#cc-chat-header button {
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#cc-chat-header button:hover,
+#cc-chat-header button:focus-visible {
+  background: rgba(255, 255, 255, 0.35);
+  outline: none;
+}
+
+#cc-chat-status {
+  padding: 8px 14px;
+  font-size: 12px;
+  background: rgba(243, 203, 110, 0.45);
+  color: #4a3208;
+}
+
+#cc-chat-status.error {
+  background: #fde8e8;
+  color: #8a1c1c;
+}
+
+#cc-chat-settings {
+  display: none;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0e6d2;
+  background: #fffaf0;
+}
+
+#cc-chat-settings.open {
+  display: block;
+}
+
+#cc-chat-settings label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+#cc-chat-settings input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e0c48a;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+}
+
+#cc-chat-settings button {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: rgba(244, 155, 23, 0.95);
+  color: #fff;
+  cursor: pointer;
+}
+
+#cc-chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  background: #faf7f2;
+}
+
+.cc-msg {
+  max-width: 86%;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.cc-msg.user {
+  margin-left: auto;
+  background: rgba(244, 155, 23, 0.92);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.cc-msg.assistant {
+  background: #fff;
+  color: #222;
+  border: 1px solid #f0e6d2;
+  border-bottom-left-radius: 4px;
+}
+
+.cc-msg.error {
+  background: #fde8e8;
+  color: #8a1c1c;
+  border-color: #f5c2c2;
+}
+
+#cc-chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 14px 10px;
+  background: #faf7f2;
+}
+
+#cc-chat-suggestions button {
+  border: 1px solid #f0e6d2;
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #5a3d0c;
+}
+
+#cc-chat-suggestions button:hover {
+  background: rgba(243, 203, 110, 0.45);
+}
+
+#cc-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #f0e6d2;
+  background: #fff;
+}
+
+#cc-chat-form textarea {
+  flex: 1;
+  resize: none;
+  min-height: 42px;
+  max-height: 90px;
+  border: 1px solid #e0c48a;
+  border-radius: 10px;
+  padding: 10px;
+  font: inherit;
+  font-size: 14px;
+}
+
+#cc-chat-form button[type="submit"] {
+  border: 0;
+  border-radius: 10px;
+  padding: 0 14px;
+  background: rgba(93, 93, 238, 0.9);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#cc-chat-form button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+#nav-help,
+#nav-assistant {
+  cursor: pointer;
+}
